@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Toddler Fun Area | Learning: Alphabets</title>
+  
+ 
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-waqnr0');
+	src:url('../fonts/icomoon.eot?#iefix-waqnr0') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-waqnr0') format('woff'),
+		url('../fonts/icomoon.ttf?-waqnr0') format('truetype'),
+		url('../fonts/icomoon.svg?-waqnr0#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	background: #ba423a;
+	background-size: 200vh;
+	font:14px/1.5em Verdana, Geneva, sans-serif;
+	color:#444;
+}
+
+@media (min-width:1024px) {
+body {
+	background-size: 100vw 100vh;
+	background-repeat: repeat;
+ }
+}
+
+a
+{
+   text-decoration:none;
+   outline:none;
+}
+
+
+a img {
+  border:none;
+}
+
+.container
+{
+  margin: 3% auto;
+  position:relative;
+  min-height:600px;
+}
+
+@media (min-width:1024px){
+.container{
+	width:960px;
+ }
+}
+
+.cf:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.off
+{
+  display:none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.no-show{
+  visibility:hidden;
+  opacity: 0;
+}
+
+.transition{
+  -webkit-transition: all 1s ease-in;
+  -moz-transition: all 1s ease-in;
+  -ms-transition: all 1s ease-in;
+  -o-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+.loading
+{
+  font-size:1.5em;
+  font-weight:bold;
+  width:100%;
+  position:absolute;
+  top:30%;
+  left:30%;
+}
+
+#progressbar
+{
+  border:2px solid #777;
+  width:50%;
+}
+
+#progressbar p
+{
+  margin:0;
+  padding:1% 0;
+  width:0;
+  background-color:#f5f80c;
+}
+
+
+.side-nav{
+	list-style:none;
+	padding-left:0;
+}
+
+.side-nav li{
+	float:left;
+	width:25%;
+	text-align:center;
+}
+
+@media(min-width:992px){
+.side-nav{
+	float:left;
+	list-style:none;
+	width:15%;
+	padding-left:0;
+}
+.side-nav li{
+	float:none;
+	margin-bottom:15px;
+	width: 100%;
+}
+}
+
+@media(min-width:1024px){
+.side-nav li{
+	margin-bottom:0;
+}
+}
+
+.side-nav li a img{
+	width:100%;
+}
+
+@media (min-width:1200px){
+.side-nav li a img{
+	width:100%;
+}
+}
+
+.side-nav li:hover img{
+  -moz-transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+
+
+.main_content{
+	clear: both;
+	margin:0 auto 3%;
+	margin-top: 40px;
+	width:95%;
+	padding:2% 5%;
+	border:3px solid #7b8f8e;
+	border-radius:15px;
+	background: #c7dcda; /* Fall back for browsers that donot support transparency */
+	background: rgba(199, 220, 218, 0.8);
+}
+@media(min-width:992px){
+.main_content{
+	float:right;
+	width:80%;
+	clear:none;
+}
+}
+
+h1,
+h2,
+h3{
+	text-align:center;
+	line-height: 1.4;
+}
+
+.main_content a{
+	color:#00B;
+}
+
+.main_content a:hover{
+	text-decoration:underline;
+}
+
+.slide{
+	width:50%;
+	float:left;
+	text-align:center;
+}
+
+.slide img{
+	border-radius:12px;
+	border:1px solid #7b8f8e;
+	width:70%;
+}
+
+.games-slide a img,
+.learning-slide a img{
+	width:100%;
+}
+p{
+  border-radius: 5px;
+}
+.note{
+	clear:both;
+	text-align:center;
+	font-size:small;
+}
+
+.box-wrap{
+	float:left;
+	width:50%;
+	margin:0 auto;
+}
+.box{
+	padding:0 9% 5%;
+}
+
+@media(min-width: 768px){
+.box-wrap{
+	width:33.33%;
+}
+}
+
+.box h4{
+	text-align:center;
+	color:#900;
+	margin:10px auto;
+	line-height: normal;
+}
+
+.box img{
+	width:100%;
+	text-align:center;
+	border-radius:12px;
+	border:4px solid #bbb;
+	-webkit-box-shadow: 0px 3px 5px -1px #333;
+    box-shadow: 0px 3px 5px -1px #333;  
+}
+
+.box img:hover{
+   -webkit-transform: rotate(5deg);
+   -moz-transform: rotate(5deg);
+   -o-transform: rotate(5deg);
+   -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+}
+
+.scratch_games{
+	clear:both;
+	float:right;
+}
+
+.scratch_games a{
+	color:#fff;
+	font-weight:bold;
+	display:inline-block;
+	padding:10px;
+	line-height:20px;
+	background-color:#09F;
+	border-radius:30%/100%;
+	margin-left:5px;
+}
+
+#win-img,
+#game-over-img
+{
+  width:100%;
+  position:absolute;
+  top:20%;
+  left:10%;
+  display:none;
+  text-align:center;
+}
+
+#win-img img,
+#game-over-img img
+{
+	width:70%;
+}
+
+@media(min-width:600px){
+#win-img img,
+#game-over-img img
+{
+	width:50%;
+}
+}
+
+.button-box{
+	margin: 5px auto 10px;
+	position:relative;
+}
+
+.game-button{
+  font-size: 20px;
+  font-weight:bold;
+  color:white;
+  background-color:#005387;
+  border:2px solid #fff;
+  border-radius:5px;
+  padding:15px 40px;
+}
+
+.game-button:hover{
+  background-color:#0092bf;
+  cursor:pointer;
+}
+
+.speaker-controls{
+	position:absolute;
+	top:-5px;
+	left:150px;
+}
+
+.note{
+ clear:both;
+ text-align: justify; 
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.embed-responsive.embed-responsive-4by3 {
+   padding-bottom: 75%;
+}
+
+.slides{
+	position:relative;
+}
+
+#prev{
+	position:absolute;
+	background: red;
+	border: 1px solid black;
+	width: 70px;
+	height: 50px;
+	top:40%;
+	left:-7%;
+}
+
+#next{
+	position:absolute;
+	background: red;
+	border: 1px solid black;
+	width: 70px;
+	height: 50px;
+	top:40%;
+	right:-7%;
+}
+
+.icons{
+    font-family: 'icomoon';
+	font-size: 3rem;
+	margin-top: 300px;
+	cursor:pointer;
+	color:#444;
+}
+
+@media(min-width:768px){
+#prev{
+	left:-4%;
+}
+
+#next{
+	right:-4%;
+}
+	
+.icons{
+	font-size:25px;
+}
+}
+.icons span{
+font-size: 1rem;
+color: #fff;
+margin-left: 15px;
+}
+
+.hide{
+	visibility:hidden;
+}
+
+#slide-indicator{
+	clear:both;
+	margin-top:20px;
+}
+
+.facebook-like{
+	clear:both;
+	float:left;
+	margin:10px;
+}
+
+p.less-margin{
+	margin:0 auto 5px;
+}
+
+.hidden-xs{
+	display: none;
+}
+.visible-sm{
+	clear:both;
+	display: block;
+}
+
+@media (min-width:768px){
+.hidden-xs{
+	display: block;
+}
+.visible-sm{
+	display: none;
+}
+}
+    h1{
+	text-align:center;margin: -5px;
+}
+
+#leftside-display div,
+#rightside-display div{
+	display:none;border-radius: 10px;
+	height: 120px;
+}
+
+#leftside-display div.active,
+#rightside-display div.active{
+	display:block;
+}
+
+#leftside-display div{
+	background-color:#8889c9;
+	border-radius: 10px;
+}
+
+#leftside-display div,
+#rightside-display div img{
+	border:3px solid #7b8f8e;
+	margin:-5px 0 0;
+}
+
+#rightside-display div img{
+	width:100%;border-radius: 10px;
+	height: 230px;
+}
+
+h2{
+	font-size:30px;
+}
+
+@media(min-width:768px){
+h2{
+	font-size:40px;
+	padding:20px;
+}
+	
+#leftside-display div,
+#rightside-display div{
+	float:left;
+	width:48%;
+}
+
+
+#rightside-display div{
+	margin-left:4%;
+}
+	
+}
+
+@media(min-width:820px){
+h2{
+	font-size:60px;
+}
+}
+
+#slide-indicator p{
+	float:left;
+	width:40px;
+	height:40px;
+	border:3px solid #7b8f8e;
+	background-color:lightblue;
+	cursor:pointer;
+	opacity:0.7;
+	font-size:25px;
+	line-height:30px;
+	text-align:center;
+	margin:5px;
+}
+
+#slide-indicator p.active{
+	opacity:1;
+}
+.rtr{
+  width: 40px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 10px;
+}
+  </style>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="learning1.js"></script>
+</head>
+<body>
+<div class="container cf">
+<nav>
+<ul class="side-nav">
+<li><a href = "home.html" class="nav_home_img"><div class="rtr">🏠</div></a></li></ul></nav>
+  <div class="main_content cf">
+    
+    <div class="slides cf">
+    
+      <div id="leftside-display">
+        <div class="active">
+<h1>Health</h1>
+<h2>الصحة</h2>
+<audio preload="auto" id="audio1" src="health.mp3"></audio></div>
+
+<div>
+<h1>Disease</h1>
+<h2>مرض</h2>
+<audio preload="auto" id="audio10" src="disease.mp3"></audio></div>
+   
+<div>
+<h1>ache</h1>
+<h2>وجع</h2>
+<audio preload="auto" id="audio11" src="ache.mp3"></audio></div>
+      
+<div>
+<h1>blood pressure</h1>
+<h2>ضغط دم</h2>
+<audio preload="auto" id="audio6" src="blood-pressure.mp3"></audio></div>
+          
+<div>
+<h1>anaemia</h1>
+<h2>فقر دم</h2>
+<audio preload="auto" id="audio7" src="anaemia.mp3"></audio></div>
+    
+<div>
+<h1>broken tooth</h1>
+<h2>سن مكسور</h2>
+<audio preload="auto" id="audio5" src="broken-tooth.mp3"></audio></div>
+          
+<div>
+<h1>burn</h1>
+<h2>حرق</h2>
+<audio preload="auto" id="audio4" src="burn.mp3"></audio></div>
+           
+<div>
+<h1>constipation</h1>
+<h2>إمساك</h2>
+<audio preload="auto" id="audio10" src="constipation.mp3"></audio></div>
+   
+<div>
+<h1>cough</h1>
+<h2>سعال</h2>
+<audio preload="auto" id="audio11" src="cough.mp3"></audio></div>
+
+
+<div>
+<h1>colic</h1>
+<h2>مغص</h2>
+<audio preload="auto" id="audio6" src="colic.mp3"></audio></div>
+          
+<div>
+<h1>Cancer</h1>
+<h2>سرطان</h2>
+<audio preload="auto" id="audio7" src="cancer.mp3"></audio></div>
+    
+<div>
+<h1>diarrhea</h1>
+<h2>إسهال</h2>
+<audio preload="auto" id="audio5" src="diarrhea.mp3"></audio></div>
+          
+<div>
+<h1>dezziness</h1>
+<h2>دوخة</h2>
+<audio preload="auto" id="audio4" src="dezziness.mp3"></audio></div>
+           
+<div>
+<h1>earache</h1>
+<h2>وجع أذن</h2>
+<audio preload="auto" id="audio3" src="earache.mp3"></audio></div>
+
+<div>
+<h1>fracture</h1>
+<h2>كسر</h2>
+<audio preload="auto" id="audio10" src="fracture.mp3"></audio></div>
+   
+<div>
+<h1>fever</h1>
+<h2>حمى</h2>
+<audio preload="auto" id="audio11" src="fever.mp3"></audio></div>
+      
+<div>
+<h1>headache</h1>
+<h2>وجع رأس</h2>
+<audio preload="auto" id="audio6" src="headache.mp3"></audio></div>
+          
+<div>
+<h1>poisoning</h1>
+<h2>تسمم</h2>
+<audio preload="auto" id="audio7" src="poisoning.mp3"></audio></div>
+    
+<div>
+<h1>stomachache</h1>
+<h2>وجع معدة</h2>
+<audio preload="auto" id="audio5" src="stomachache.mp3"></audio></div>
+          
+<div>
+<h1>toothache</h1>
+<h2>وجع أسنان</h2>
+<audio preload="auto" id="audio4" src="toothache.mp3"></audio></div>
+           
+<div>
+<h1>ulcer</h1>
+<h2>قرحة</h2>
+<audio preload="auto" id="audio3" src="ulcer.mp3"></audio></div>
+
+<div>
+<h1>wound</h1>
+<h2>جرح</h2>
+<audio preload="auto" id="audio2" src="wound.mp3"></audio></div>
+  
+<div>
+<h1>injection</h1>
+<h2>حقنة</h2>
+<audio preload="auto" id="audio8" src="injection.mp3"></audio></div>
+<div>
+<h1>medicine</h1>
+<h2>دواء</h2>
+<audio preload="auto" id="audio10" src="medicine.mp3"></audio></div>
+      
+<div>
+<h1>urgent operation</h1>
+<h2>عملية جراحية</h2>
+<audio preload="auto" id="audio6" src="urgent-operation.mp3"></audio></div>
+          
+<div>
+<h1>Prescription</h1>
+<h2>وصفة دواء</h2>
+<audio preload="auto" id="audio7" src="prescription.mp3"></audio></div>
+    
+<div>
+<h1>Ambulance</h1>
+<h2>سيارة اسعاف</h2>
+<audio preload="auto" id="audio5" src="ambulance.mp3"></audio></div>
+          
+<div>
+<h1>Hospital</h1>
+<h2>مستشفى</h2>
+<audio preload="auto" id="audio4" src="hospital.mp3"></audio></div>
+           
+<div>
+<h1>Diabetes</h1>
+<h2>داء السكري</h2>
+<audio preload="auto" id="audio3" src="diabetes.mp3"></audio></div>
+
+</div>
+<div id="slide-indicator" >
+<div id="rightside-display">
+<div class="active"><img src="health.jpg"/>
+<p>🔊</p></div>
+<div><img src="disease.jpg"/><p>🔊</p></div>
+<div><img src="ache.jpg"/><p>🔊</p></div>
+<div><img src="blood pressure.jpg"/><p>🔊</p></div>
+<div><img src="anaemia.jpg"/><p>🔊</p></div>
+<div><img src="broken tooth.jpg"/><p>🔊</p></div>
+<div><img src="burn.jpg"/><p>🔊</p></div>
+<div><img src="constipation.jpg"/><p>🔊</p></div>
+<div><img src="cough.jpg"/><p>🔊</p></div>
+<div><img src="colic.jpg"/><p>🔊</p></div>
+<div><img src="cancer.jpg"/><p>🔊</p></div>
+<div><img src="diarrhea.jpg"/><p>🔊</p></div>
+<div><img src="dezziness.jpg"/><p>🔊</p></div>
+<div><img src="earache.jpg"/><p>🔊</p></div>
+<div><img src="fracture.jpg"/><p>🔊</p></div>
+<div><img src="fever.jpg"/><p>🔊</p></div>
+<div><img src="headache.jpg"/><p>🔊</p></div>
+<div><img src="poisoning.jpg"/><p>🔊</p></div>
+<div><img src="stomachache.jpg"/><p>🔊</p></div>
+<div><img src="toothache.jpg"/><p>🔊</p></div>
+<div><img src="ulcer.jpg"/><p>🔊</p></div>
+<div><img src="wound.jpg"/><p>🔊</p></div>
+<div><img src="injection.jpg"/><p>🔊</p></div>
+<div><img src="medicine.jpg"/><p>🔊</p></div>
+<div><img src="urgent operation.jpg"/><p>🔊</p></div>
+<div><img src="prescription.jpg"/><p>🔊</p></div>
+<div><img src="ambulance.jpg"/><p>🔊</p></div>
+<div><img src="hospital.jpg"/><p>🔊</p></div>
+<div><img src="diabetes.jpg"/><p>🔊</p></div>
+
+</div></div>
+
+<div class="controls">
+<p id="next" class="icons icon-next">
+<span>next</span></p>
+<p id="prev" class="icons icon-prev">
+<span>prev</span></p>
+</div></div></div></div>
+</body>
+</html>
